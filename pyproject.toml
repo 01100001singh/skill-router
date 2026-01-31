@@ -1,0 +1,86 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "skill-router"
+version = "0.1.0"
+description = "Runtime polymorphism for AI agent expertise - intelligent skill dispatch via embeddings"
+readme = "README.md"
+license = "Apache-2.0"
+requires-python = ">=3.10"
+authors = [
+    { name = "Ankit Singh", email = "ankit@example.com" }
+]
+keywords = [
+    "ai",
+    "llm",
+    "routing",
+    "skills",
+    "agents",
+    "embeddings",
+    "semantic-router",
+    "polymorphism"
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: Apache Software License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = [
+    "numpy>=1.24.0",
+    "pyyaml>=6.0",
+    "pydantic>=2.0.0",
+]
+
+[project.optional-dependencies]
+openai = ["openai>=1.0.0"]
+cohere = ["cohere>=4.0.0"]
+huggingface = ["sentence-transformers>=2.2.0"]
+local = ["sentence-transformers>=2.2.0"]
+langchain = ["langchain>=0.1.0"]
+all = [
+    "openai>=1.0.0",
+    "cohere>=4.0.0",
+    "sentence-transformers>=2.2.0",
+    "langchain>=0.1.0",
+]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-asyncio>=0.21.0",
+    "pytest-cov>=4.0.0",
+    "ruff>=0.1.0",
+    "mypy>=1.0.0",
+    "pre-commit>=3.0.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/01100001singh/skill-router"
+Documentation = "https://github.com/01100001singh/skill-router#readme"
+Repository = "https://github.com/01100001singh/skill-router"
+Issues = "https://github.com/01100001singh/skill-router/issues"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/skill_router"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "N", "W", "UP"]
+ignore = ["E501"]
+
+[tool.mypy]
+python_version = "3.10"
+strict = true
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"
