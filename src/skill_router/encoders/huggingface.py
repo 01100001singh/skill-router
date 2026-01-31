@@ -1,6 +1,6 @@
 """HuggingFace encoder for embeddings."""
 
-from typing import Optional
+
 from skill_router.encoders.base import BaseEncoder
 
 
@@ -15,7 +15,7 @@ class HuggingFaceEncoder(BaseEncoder):
     def __init__(
         self,
         model_name: str = "sentence-transformers/all-mpnet-base-v2",
-        device: Optional[str] = None,
+        device: str | None = None,
         normalize_embeddings: bool = True
     ):
         """

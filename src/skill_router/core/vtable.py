@@ -1,10 +1,9 @@
 """Skill VTable - Main dispatch logic for skill routing."""
 
 from pathlib import Path
-from typing import Optional
 
-from skill_router.core.types import DispatchResult, RoutingStrategy, Encoder
 from skill_router.core.registry import SkillRegistry
+from skill_router.core.types import DispatchResult, Encoder, RoutingStrategy
 
 
 class SkillVTable:
@@ -19,7 +18,7 @@ class SkillVTable:
         self,
         skills_dir: Path | str,
         encoder: Encoder,
-        strategy: Optional[RoutingStrategy] = None,
+        strategy: RoutingStrategy | None = None,
         confidence_threshold: float = 0.85
     ):
         """
@@ -82,7 +81,7 @@ class SkillVTable:
         """List all registered skills."""
         return self.registry.list_skills()
 
-    def get_skill_content(self, name: str) -> Optional[str]:
+    def get_skill_content(self, name: str) -> str | None:
         """Get the content of a skill by name."""
         entry = self.registry.get_skill(name)
         if entry:

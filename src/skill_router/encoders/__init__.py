@@ -10,19 +10,19 @@ __all__ = [
 
 # Optional imports based on installed dependencies
 try:
-    from skill_router.encoders.openai import OpenAIEncoder
+    from skill_router.encoders.openai import OpenAIEncoder  # noqa: F401
     __all__.append("OpenAIEncoder")
 except ImportError:
     pass
 
 try:
-    from skill_router.encoders.cohere import CohereEncoder
+    from skill_router.encoders.cohere import CohereEncoder  # noqa: F401
     __all__.append("CohereEncoder")
 except ImportError:
     pass
 
 try:
-    from skill_router.encoders.huggingface import HuggingFaceEncoder
+    from skill_router.encoders.huggingface import HuggingFaceEncoder  # noqa: F401
     __all__.append("HuggingFaceEncoder")
 except ImportError:
     pass

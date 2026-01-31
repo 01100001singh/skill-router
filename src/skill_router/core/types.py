@@ -1,9 +1,14 @@
 """Type definitions for Skill Router."""
 
+from __future__ import annotations
+
 from dataclasses import dataclass, field
-from pathlib import Path
-from typing import Protocol, runtime_checkable
 from datetime import datetime
+from pathlib import Path
+from typing import TYPE_CHECKING, Protocol, runtime_checkable
+
+if TYPE_CHECKING:
+    from skill_router.core.registry import SkillRegistry
 
 
 @dataclass
@@ -44,7 +49,7 @@ class RoutingStrategy(Protocol):
     def dispatch(
         self,
         query: str,
-        registry: "SkillRegistry"  # type: ignore
+        registry: SkillRegistry
     ) -> DispatchResult:
         """Route a query to the best matching skill."""
         ...

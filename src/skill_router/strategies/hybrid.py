@@ -1,8 +1,9 @@
 """Hybrid routing strategy with LLM fallback."""
 
-from typing import Optional, Callable
-from skill_router.core.types import DispatchResult
+from collections.abc import Callable
+
 from skill_router.core.registry import SkillRegistry
+from skill_router.core.types import DispatchResult
 from skill_router.strategies.semantic import SemanticStrategy
 
 
@@ -17,7 +18,7 @@ class HybridStrategy:
     def __init__(
         self,
         confidence_threshold: float = 0.85,
-        llm_selector: Optional[Callable[[str, list[tuple[str, float]]], str]] = None,
+        llm_selector: Callable[[str, list[tuple[str, float]]], str] | None = None,
         top_k: int = 5
     ):
         """

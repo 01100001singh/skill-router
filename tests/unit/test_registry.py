@@ -1,7 +1,8 @@
 """Tests for SkillRegistry."""
 
+
 import pytest
-from pathlib import Path
+
 from skill_router.core.registry import SkillRegistry
 
 

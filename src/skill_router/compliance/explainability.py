@@ -1,6 +1,7 @@
 """Explainability reports for skill routing decisions."""
 
 from dataclasses import dataclass
+
 from skill_router.core.types import DispatchResult
 
 

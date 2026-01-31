@@ -1,8 +1,9 @@
 """Tests for skill parsers."""
 
+
 import pytest
-from pathlib import Path
-from skill_router.parsers.skill_parser import SkillParser, ParsedSkill
+
+from skill_router.parsers.skill_parser import SkillParser
 
 
 @pytest.fixture

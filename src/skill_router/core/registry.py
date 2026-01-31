@@ -2,11 +2,11 @@
 
 import threading
 from pathlib import Path
-from typing import Optional
-import yaml
-import numpy as np
 
-from skill_router.core.types import SkillEntry, Encoder
+import numpy as np
+import yaml
+
+from skill_router.core.types import Encoder, SkillEntry
 
 
 class SkillRegistry:
@@ -101,7 +101,7 @@ class SkillRegistry:
                 return True
             return False
 
-    def get_skill(self, name: str) -> Optional[SkillEntry]:
+    def get_skill(self, name: str) -> SkillEntry | None:
         """Get a skill by name."""
         return self._skills.get(name)
 

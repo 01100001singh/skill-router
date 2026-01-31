@@ -1,7 +1,7 @@
 """OpenAI encoder for embeddings."""
 
 import os
-from typing import Optional
+
 from skill_router.encoders.base import BaseEncoder
 
 
@@ -22,8 +22,8 @@ class OpenAIEncoder(BaseEncoder):
     def __init__(
         self,
         model: str = "text-embedding-3-small",
-        api_key: Optional[str] = None,
-        dimensions: Optional[int] = None
+        api_key: str | None = None,
+        dimensions: int | None = None
     ):
         """
         Initialize the OpenAI encoder.

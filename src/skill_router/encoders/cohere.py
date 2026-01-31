@@ -1,7 +1,7 @@
 """Cohere encoder for embeddings."""
 
 import os
-from typing import Optional
+
 from skill_router.encoders.base import BaseEncoder
 
 
@@ -22,7 +22,7 @@ class CohereEncoder(BaseEncoder):
     def __init__(
         self,
         model: str = "embed-english-v3.0",
-        api_key: Optional[str] = None,
+        api_key: str | None = None,
         input_type: str = "search_query"
     ):
         """

@@ -2,9 +2,9 @@
 
 import re
 from dataclasses import dataclass
-from typing import Optional
-from skill_router.core.types import DispatchResult
+
 from skill_router.core.registry import SkillRegistry
+from skill_router.core.types import DispatchResult
 
 
 @dataclass
@@ -24,7 +24,7 @@ class RuleBasedStrategy:
     can be combined with semantic routing as a pre-filter.
     """
 
-    def __init__(self, rules: Optional[list[RoutingRule]] = None):
+    def __init__(self, rules: list[RoutingRule] | None = None):
         """
         Initialize rule-based strategy.
 

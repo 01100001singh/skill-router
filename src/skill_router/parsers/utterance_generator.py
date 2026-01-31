@@ -1,6 +1,6 @@
 """Utterance generation from skill metadata."""
 
-from typing import Optional, Callable
+from collections.abc import Callable
 
 
 class UtteranceGenerator:
@@ -12,7 +12,7 @@ class UtteranceGenerator:
 
     def __init__(
         self,
-        llm_generator: Optional[Callable[[str], list[str]]] = None,
+        llm_generator: Callable[[str], list[str]] | None = None,
         min_utterances: int = 5
     ):
         """
@@ -29,7 +29,7 @@ class UtteranceGenerator:
         self,
         name: str,
         description: str,
-        keywords: Optional[list[str]] = None
+        keywords: list[str] | None = None
     ) -> list[str]:
         """
         Generate utterances from skill metadata.

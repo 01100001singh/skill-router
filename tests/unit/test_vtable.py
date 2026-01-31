@@ -1,10 +1,9 @@
 """Tests for SkillVTable."""
 
+
 import pytest
-from pathlib import Path
-from unittest.mock import Mock
+
 from skill_router.core.vtable import SkillVTable
-from skill_router.core.registry import SkillRegistry
 
 
 class MockEncoder:

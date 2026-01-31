@@ -1,7 +1,7 @@
 """Semantic routing strategy using embedding similarity."""
 
-from skill_router.core.types import DispatchResult
 from skill_router.core.registry import SkillRegistry
+from skill_router.core.types import DispatchResult
 
 
 class SemanticStrategy:

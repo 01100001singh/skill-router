@@ -1,8 +1,8 @@
 """Skill file parser."""
 
-from pathlib import Path
 from dataclasses import dataclass
-from typing import Optional
+from pathlib import Path
+
 import yaml
 
 

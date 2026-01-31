@@ -1,9 +1,9 @@
 """Claude Code integration for skill routing."""
 
 from pathlib import Path
-from typing import Optional
-from skill_router.core.vtable import SkillVTable
+
 from skill_router.core.types import DispatchResult
+from skill_router.core.vtable import SkillVTable
 
 
 class ClaudeCodeIntegration:
@@ -16,7 +16,7 @@ class ClaudeCodeIntegration:
     def __init__(
         self,
         vtable: SkillVTable,
-        skills_base_path: Optional[Path] = None
+        skills_base_path: Path | None = None
     ):
         """
         Initialize Claude Code integration.

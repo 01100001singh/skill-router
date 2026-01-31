@@ -1,6 +1,6 @@
 """Local encoder using sentence-transformers."""
 
-from typing import Optional
+
 from skill_router.encoders.base import BaseEncoder
 
 
@@ -14,7 +14,7 @@ class LocalEncoder(BaseEncoder):
     def __init__(
         self,
         model_name: str = "all-MiniLM-L6-v2",
-        device: Optional[str] = None
+        device: str | None = None
     ):
         """
         Initialize the local encoder.

@@ -4,7 +4,7 @@ import json
 import logging
 from datetime import datetime
 from pathlib import Path
-from typing import Optional
+
 from skill_router.core.types import DispatchResult
 
 
@@ -18,7 +18,7 @@ class AuditLogger:
 
     def __init__(
         self,
-        log_path: Optional[Path | str] = None,
+        log_path: Path | str | None = None,
         log_level: int = logging.INFO
     ):
         """
@@ -42,9 +42,9 @@ class AuditLogger:
     def log_dispatch(
         self,
         result: DispatchResult,
-        user_id: Optional[str] = None,
-        session_id: Optional[str] = None,
-        metadata: Optional[dict] = None
+        user_id: str | None = None,
+        session_id: str | None = None,
+        metadata: dict | None = None
     ) -> dict:
         """
         Log a dispatch decision.
@@ -79,9 +79,9 @@ class AuditLogger:
 
     def query_logs(
         self,
-        skill_name: Optional[str] = None,
-        start_time: Optional[datetime] = None,
-        end_time: Optional[datetime] = None
+        skill_name: str | None = None,
+        start_time: datetime | None = None,
+        end_time: datetime | None = None
     ) -> list[dict]:
         """
         Query audit logs.
