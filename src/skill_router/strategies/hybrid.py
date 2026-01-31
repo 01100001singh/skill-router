@@ -83,7 +83,8 @@ class HybridStrategy:
         candidates = [(semantic_result.skill_name, semantic_result.confidence)]
         candidates.extend(semantic_result.alternatives)
 
-        # Call LLM selector
+        # Call LLM selector (we know it's not None because dispatch checks first)
+        assert self.llm_selector is not None
         selected_name = self.llm_selector(query, candidates)
 
         # Find selected skill

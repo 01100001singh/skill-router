@@ -32,7 +32,7 @@ class LocalEncoder(BaseEncoder):
             )
 
         self.model = SentenceTransformer(model_name, device=device)
-        self._dimension = self.model.get_sentence_embedding_dimension()
+        self._dimension: int = self.model.get_sentence_embedding_dimension() or 384
 
     def encode(self, texts: list[str]) -> list[list[float]]:
         """Encode texts into embeddings."""

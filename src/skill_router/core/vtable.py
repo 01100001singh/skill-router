@@ -14,6 +14,8 @@ class SkillVTable:
     similarity matching with optional fallback strategies.
     """
 
+    strategy: RoutingStrategy
+
     def __init__(
         self,
         skills_dir: Path | str,
